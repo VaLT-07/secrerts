@@ -1,0 +1,15 @@
+<div class="card shadow-lg rounded-4 p-4">
+  <h3 class="text-center mb-3">Create your account</h3>
+  <% if (errors && errors.length) { %>
+    <div class="alert alert-danger"><ul class="mb-0"><% errors.forEach(e=>{ %><li><%= e.msg %></li><% }) %></ul></div>
+  <% } %>
+  <form method="post" action="/register" novalidate>
+    <div class="mb-3"><label class="form-label">Name</label><input class="form-control" type="text" name="name" value="<%= (form && form.name) || '' %>" required></div>
+    <div class="mb-3"><label class="form-label">Email</label><input class="form-control" type="email" name="email" value="<%= (form && form.email) || '' %>" required></div>
+    <div class="mb-3"><label class="form-label">Password</label><input id="regPassword" class="form-control" type="password" name="password" required><div class="form-text">At least 6 chars, uppercase, lowercase and a number.</div></div>
+    <div class="mb-3"><label class="form-label">Confirm Password</label><input id="regConfirm" class="form-control" type="password" name="confirmPassword" required></div>
+    <div class="form-check mb-3"><input class="form-check-input" type="checkbox" onclick="togglePass('regPassword')"><label class="form-check-label">Show password</label></div>
+    <button class="btn btn-success w-100" type="submit">Create account</button>
+    <p class="text-center mt-3 mb-0">Already have an account? <a href="/login">Log in</a></p>
+  </form>
+</div>
