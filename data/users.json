@@ -1,0 +1,9 @@
+[
+  {
+    "id": "demo",
+    "name": "Demo User",
+    "email": "demo@example.com",
+    "passwordHash": "$2a$10$5fMWVq9nB1pgouWg3houlO6OpbUv9YXKkBRMZ6FHogTccCOzN6K32",
+    "createdAt": "2025-08-22T06:40:17.315Z"
+  }
+]
