@@ -1,0 +1,13 @@
+<div class="card shadow-lg rounded-4 p-4">
+  <h3 class="text-center mb-3">Welcome back</h3>
+  <% if (errors && errors.length) { %>
+    <div class="alert alert-danger"><ul class="mb-0"><% errors.forEach(e=>{ %><li><%= e.msg %></li><% }) %></ul></div>
+  <% } %>
+  <form method="post" action="/login" novalidate>
+    <div class="mb-3"><label class="form-label">Email</label><input class="form-control" type="email" name="email" value="<%= (form && form.email) || '' %>" required></div>
+    <div class="mb-3"><label class="form-label">Password</label><input id="loginPassword" class="form-control" type="password" name="password" required>
+      <div class="form-check mt-2"><input class="form-check-input" type="checkbox" onclick="togglePass('loginPassword')"><label class="form-check-label">Show password</label></div></div>
+    <button class="btn btn-primary w-100" type="submit">Log in</button>
+    <p class="text-center mt-3 mb-0">No account? <a href="/register">Sign up</a></p>
+  </form>
+</div>
