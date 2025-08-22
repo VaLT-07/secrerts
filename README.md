@@ -1,27 +1,34 @@
-# Secrets — Minimal Secure Auth App (No DB)
+📌 Secrets — Secure Auth App 
 
-Features
-- Registration with name, email, password (validated)
-- Password hashing (bcrypt)
-- Login with JWT stored in HttpOnly cookie
-- Protected dashboard, ability to post/view personal 'secrets'
-- Attractive Bootstrap UI
-- File-based persistence: `data/users.json`, `data/secrets.json`
+A minimal Node.js + Express + EJS project demonstrating secure user authentication with an attractive Bootstrap UI.
+Users can register, log in, and share personal “secrets” securely.
 
-Run
-```
-npm install
-cp .env.example .env
-npm start
-```
-Open http://localhost:3000
-Demo user created automatically if no users exist: demo@example.com / DemoPass1
+✨ Features
 
-.env.example
-```
-JWT_SECRET=change_me
-NODE_ENV=development
-PORT=3000
-```
+🔑 User Registration with validation
 
-Notes: For production use a real DB and stronger secret. This repo is for demo and learning purposes.
+Name, email, password (must include upper, lower, number, min 6 chars)
+
+🔒 Password Security — stored with bcrypt hashing
+
+✅ Validation — email format + strong password check
+
+🍪 Authentication
+
+JWT tokens stored in HttpOnly cookies
+
+Protected routes (dashboard + secrets)
+
+👤 Session Management — logout clears cookie
+
+📝 Secrets Feature — users can post and view their own secrets
+
+🎨 Attractive UI — Bootstrap 5 with gradient navbar & modern cards
+
+💾 File-based persistence (data/users.json, data/secrets.json)
+
+👨‍💻 Demo User created automatically:
+
+Email: demo@example.com
+
+Password: DemoPass1
